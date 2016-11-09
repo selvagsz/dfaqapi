@@ -1,0 +1,23 @@
+{
+  "name": "dfaqapi",
+  "version": "0.0.0",
+  "description": "Fake APIs",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src/ --out-dir lib/"
+  },
+  "author": "selvagsz (selvaganeshbsg@gmail.com)",
+  "license": "MIT",
+  "dependencies": {
+    "faker": "^3.1.0",
+    "lokijs": "^1.4.1",
+    "pretender": "^1.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "webpack": "^1.13.3"
+  }
+}

@@ -1,0 +1,9 @@
+# output
+lib/
+dist/
+
+# dependencies
+/node_modules
+
+# misc
+*.log
