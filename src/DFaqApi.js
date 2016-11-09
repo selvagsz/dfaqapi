@@ -17,11 +17,14 @@ export default class DFaqApi {
     this.apiPrefix = options.apiPrefix || ''
     this.factories = options.factories || {}
     this.db = new loki('dfaqapi.db')
+    let supportedMethods = ['get', 'post', 'put', 'delete']
+
     this.server =  new Pretender(function () {
-      this.get('/*wildcard', this.passthrough)
+      supportedMethods.forEach((method) => {
+        this[method]('/*wildcard', this.passthrough)
+      })
     })
 
-    let supportedMethods = ['get', 'post', 'put', 'delete']
     supportedMethods.forEach((method) => {
       Object.defineProperty(this, method, {
         value: function(url, handler) {
