@@ -43,9 +43,9 @@ export default class DFaqApi {
     })
   }
 
-  createList(name, count) {
+  createList(name, count, factory) {
     let collection = this.db.getCollection(name) || this.db.addCollection(name)
-    let Factory = this.factories[name]
+    let Factory = factory || this.factories[name]
 
     if (!Factory) {
       throw new Error(`No factory for ${name} provided`)

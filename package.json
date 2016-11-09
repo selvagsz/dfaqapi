@@ -1,14 +1,20 @@
 {
   "name": "dfaqapi",
   "version": "0.0.0",
-  "description": "Fake APIs",
+  "description": "Plug and play mocks for XMLHTTPRequest",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src/ --out-dir lib/"
+    "clean": "rm -rf lib",
+    "build:commonjs": "babel src/ --out-dir lib/",
+    "build": "npm run clean && npm run build:commonjs",
+    "prepublish": "npm run build"
   },
   "author": "selvagsz (selvaganeshbsg@gmail.com)",
   "license": "MIT",
+  "keywords": [
+    "Rest http mocks",
+    "fake api"
+  ],
   "dependencies": {
     "faker": "^3.1.0",
     "lokijs": "^1.4.1",
