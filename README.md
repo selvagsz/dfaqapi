@@ -1,5 +1,5 @@
 # dfaqapi
-Read it as "The Fake Api" 
+Read it as "The Fake Api". Plug n play mocks for XMLHTTPRequest
 
 ## Usage
 
@@ -8,8 +8,7 @@ import DFaqApi from 'dfaqapi'
 import { Factory, faker } from 'dfaqapi'
 
 // Initialize the fake server
-
-let faker = new Faker({
+let faker = new DFaqApi({
   apiPrefix: '/v1',
   factories: {
     users: Factory.extend({
