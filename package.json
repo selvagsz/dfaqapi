@@ -1,6 +1,6 @@
 {
   "name": "dfaqapi",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Plug and play mocks for XMLHTTPRequest",
   "main": "lib/index.js",
   "scripts": {
