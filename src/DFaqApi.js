@@ -1,5 +1,6 @@
 import Pretender from 'pretender'
 import loki from 'lokijs'
+import { parseReqBody } from './utils'
 
 /*
   let fakeApi = new DFaqApi({
@@ -31,8 +32,11 @@ export default class DFaqApi {
         value: function(url, handler) {
           let normalizedUrl = normalizeUrl(`${this.apiPrefix}/${url}`)
           this.server[method](normalizedUrl, (request) => {
+            if (method === 'post' && request.requestBody) {
+              request.parsedRequestBody = parseReqBody(request.requestBody)
+            }
             return [
-              200,
+              method === 'post' ? 201 : 200,
               {
                 'Content-Type': 'application/json'
               },

@@ -1,6 +1,10 @@
 import faker from './faker'
 
 export default class Factory {
+  constructor(options) {
+    Object.assign(this, options)
+  }
+
   belongsTo(entity) {
     let db = this.constructor.db
     let collection = db.getCollection(entity) || db.addCollection(entity)
