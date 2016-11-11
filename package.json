@@ -10,6 +10,14 @@
     "prepublish": "npm run build"
   },
   "author": "selvagsz (selvaganeshbsg@gmail.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selvagsz/dfaqapi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/selvagsz/dfaqapi/issues"
+  },
+  "homepage": "https://github.com/selvagsz/dfaqapi#readme",
   "license": "MIT",
   "keywords": [
     "Rest http mocks",

@@ -16,6 +16,7 @@ export default class DFaqApi {
   constructor(options) {
     this.apiPrefix = options.apiPrefix || ''
     this.factories = options.factories || {}
+    this.delay = options.delay || 1000
     this.db = new loki('dfaqapi.db')
     let supportedMethods = ['get', 'post', 'put', 'delete']
 
@@ -37,7 +38,7 @@ export default class DFaqApi {
               },
               JSON.stringify(handler(this.db, request))
             ]
-          })
+          }, this.delay)
         }
       })
     })
@@ -50,6 +51,7 @@ export default class DFaqApi {
     if (!Factory) {
       throw new Error(`No factory for ${name} provided`)
     }
+    Factory.db = this.db
 
     for (let i=0; i<count; i++) {
       collection.insert(new Factory().getJSON())
