@@ -32,7 +32,7 @@ export default class DFaqApi {
         value: function(url, handler) {
           let normalizedUrl = normalizeUrl(`${this.apiPrefix}/${url}`)
           this.server[method](normalizedUrl, (request) => {
-            if (method === 'post' && request.requestBody) {
+            if ((method === 'post' || method === 'put') && request.requestBody) {
               request.parsedRequestBody = parseReqBody(request.requestBody)
             }
             return [
